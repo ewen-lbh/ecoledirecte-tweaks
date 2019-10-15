@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "EcoleDirecte Tweaks",
+    "version": "1.0",
+    "description": "Adds small but signficant functionnality to ecoledirecte.com",
+    "icons": {
+        "48": "icons/ecoledirecte-tweaks-48.png",
+        "96": "icons/ecoledirecte-tweaks-96.png"
+    },
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["*://www.ecoledirecte.com/Eleves/*/Notes/"],
+            "js": ["src/notes.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["src/background.js"]
+    }
+}
